@@ -3,7 +3,7 @@ Alfred Osorio 2019
 
 # Prerequisites
 
-- [FFMPEG](https://www.ffmpeg.org/)
+- [FFMPEG](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
 
 # Installation
 

@@ -8,7 +8,7 @@ $ErrorActionPreference = "SilentlyContinue"
 # Allow PowerShell Execution
 Set-ExecutionPolicy RemoteSigned
 
-Write-Host "Creating shortcut. . ."
+Write-Host "Setting environment variables and creating shortcut . . ."
 
 # Set ffmpeg environment variables
 $path = [System.Environment]::GetEnvironmentVariable("Path", "User")
