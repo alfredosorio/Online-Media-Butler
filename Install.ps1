@@ -17,6 +17,9 @@ $path = [System.Environment]::GetEnvironmentVariable("Path", "User")
 $path = [System.Environment]::GetEnvironmentVariable("Path", "User")
 [System.Environment]::SetEnvironmentVariable("Path", $path + ";$((Get-Item -Path '.\').FullName)", "User")
 
+$path = [System.Environment]::GetEnvironmentVariable("Path", "User")
+[System.Environment]::SetEnvironmentVariable("Path", $path + ";$((Get-Item -Path '.\').FullName)\aria2c", "User")
+
 # Build shortcut object
 $WshShell = New-Object -comObject WScript.Shell
 $Shortcut = $WshShell.CreateShortcut("$((Get-Item -Path '.\').FullName)\Online Media Butler.lnk")
