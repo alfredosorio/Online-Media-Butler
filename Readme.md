@@ -18,8 +18,11 @@ To install, right-click 'Install.ps1' and click 'Run with PowerShell'
 
 # Version History
 
-- v0.1 (Current) - Initial release
+- v0.1 Initial release
+- v0.2 Implement universal installation location
+- v0.3 (Current) Add ability to choose URL lists
 
 # Upcoming Features
 
 - Integrate YouTube playlist URLs
+- Set manual download location
