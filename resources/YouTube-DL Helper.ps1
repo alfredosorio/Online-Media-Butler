@@ -14,7 +14,7 @@ $video_config = "$((Get-Item -Path '.\').FullName)\youtube-dl_video.conf"
 
 # Prompt format
 $choice_prompt = 'Select format:'
-$options = [System.Management.Automation.Host.ChoiceDescription[]] @("&Video and Audio", "&Audio Only", "&List", "&Quit")
+$options = [System.Management.Automation.Host.ChoiceDescription[]] @("&Video and Audio", "&Audio Only", "&List", "&Update", "&Quit")
 [int]$defaultChoice = 0
 $opt = $host.UI.PromptForChoice($choice_prompt, $Info, $options, $defaultChoice)
 switch($opt)
@@ -27,7 +27,8 @@ switch($opt)
       }
 
     # Audio Only
-    1 { $url = Read-Host -Prompt "`nEnter URL"
+    1 { 
+        $url = Read-Host -Prompt "`nEnter URL"
         youtube-dl --config-location "$audio_config" "$url" 
       }
 
@@ -47,6 +48,18 @@ switch($opt)
         } else {
             Write-Host "Cancelled by user. . ."
         }
+      }
+
+    # Update
+    3 { 
+        Write-Host "`n"
+
+        function pause {
+            $null = Read-Host 'Press Enter to close. . .'
+        }
+        pip install --upgrade youtube-dl
+        pause
+
       }
 }
 

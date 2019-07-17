@@ -8,6 +8,9 @@ $ErrorActionPreference = "SilentlyContinue"
 # Allow PowerShell Execution
 Set-ExecutionPolicy RemoteSigned
 
+Write-Host "Installing PIP for update support . . ."
+python get-pip.py
+
 Write-Host "Setting environment variables and creating shortcut . . ."
 
 # Set ffmpeg environment variables
