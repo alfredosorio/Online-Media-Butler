@@ -1,4 +1,5 @@
 # Online Media Butler
+
 Alfred Osorio 2019
 
 ## Prerequisites
@@ -13,7 +14,6 @@ To install, right-click 'Install.ps1' and click 'Run with PowerShell'
 
 ## Features
 
-
 - You can install the application wherever you want.
 - Multiple instances of the application can be opened for simultaneous downloads.
 - If the window is closed, the download will stop.
@@ -24,7 +24,8 @@ To install, right-click 'Install.ps1' and click 'Run with PowerShell'
 - v0.1 Initial release
 - v0.2 Implement universal installation location
 - v0.3 Add ability to choose URL lists
-- v0.4 (Current) Add aria2c as external download utility. aria2c allows n number of connections to each download.
+- v0.4 Add aria2c as external download utility. aria2c allows n number of connections to each download.
+- v0.5 (Current) Add subtitle support
 
 ## Upcoming Features
 
