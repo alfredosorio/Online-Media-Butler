@@ -30,7 +30,7 @@ $startPath = $(Get-Item -Path '.\').FullName
 $psPath = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
 $ytPath = '-ExecutionPolicy Bypass -File' + " " + """$((Get-Item -Path '.\').FullName)\resources\YouTube-DL Helper.ps1"""
 $Shortcut.TargetPath = $psPath
-$Shortcut.WorkingDirectory = $startPath
+$Shortcut.WorkingDirectory = $startPathf
 $Shortcut.Arguments = $ytPath
 $Shortcut.IconLocation = "$((Get-Item -Path '.\').FullName)\resources\icon.ico"
 $Shortcut.Save()

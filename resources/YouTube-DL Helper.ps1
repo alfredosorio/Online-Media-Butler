@@ -8,7 +8,7 @@ Write-Host
 $dl_loc = "$home\Downloads"
 Write-Host "Files will be saved to: $($dl_loc)"
 
-# Set youtube-dl config locations
+# Set yt-dlp config locations
 $audio_config = "$((Get-Item -Path '.\').FullName)\youtube-dl_audio.conf"
 $video_config = "$((Get-Item -Path '.\').FullName)\youtube-dl_video.conf"
 $subtitle_config = "$((Get-Item -Path '.\').FullName)\youtube-dl_video_with_subtitles.conf"
@@ -32,25 +32,25 @@ switch($opt)
     # Video and Audio
     0 {
         $url = Read-Host -Prompt "`nEnter URL"
-        youtube-dl --config-location "$video_config" "$url"
+        yt-dlp --config-location "$video_config" "$url"
       }
 
     # Include Subtitles
     1 {
         $url = Read-Host -Prompt "`nEnter URL"
-        youtube-dl --config-location "$subtitle_config" "$url"
+        yt-dlp --config-location "$subtitle_config" "$url"
       }
 
     # Audio Only
     2 { 
         $url = Read-Host -Prompt "`nEnter URL"
-        youtube-dl --config-location "$audio_config" "$url" 
+        yt-dlp --config-location "$audio_config" "$url" 
       }
 
     # List
     3 { Add-Type -AssemblyName System.Windows.Forms
         $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{
-            Multiselect = $false # Allow only single file selection.
+          Multiselect = $false # Allow only single file selection.
 	        Filter = 'Text Files (*.txt)|*.txt' # Specified file types
         }
         [void]$FileBrowser.ShowDialog()
@@ -59,7 +59,7 @@ switch($opt)
         If($FileBrowser.FileNames -like "*\*") {
             # Perform List action
 	        $url_list = $FileBrowser.FileName
-            youtube-dl -ci --batch-file=$url_list --config-location "$video_config"
+            yt-dlp -ci --batch-file=$url_list --config-location "$video_config"
         } else {
             Write-Host "Cancelled by user. . ."
         }
@@ -72,11 +72,12 @@ switch($opt)
         function pause {
             $null = Read-Host 'Press Enter to close. . .'
         }
-        pip install --upgrade youtube-dl
-        pause
-
+        pip install --upgrade yt-dlp
       }
 }
+
+# Restart application
+Start-Process -FilePath "$((Get-Item -Path '.\').FullName)\Online Media Butler.lnk"
 
 # Open containing folder
 # Invoke-Item $dl_loc
