@@ -25,7 +25,8 @@ To install, right-click 'Install.ps1' and click 'Run with PowerShell'
 - v0.2 Implement universal installation location
 - v0.3 Add ability to choose URL lists
 - v0.4 Add aria2c as external download utility. aria2c allows n number of connections to each download.
-- v0.5 (Current) Add subtitle support
+- v0.5 Add subtitle support
+- v0.6 (Current) Restart application after task execution 
 
 ## Upcoming Features
 
